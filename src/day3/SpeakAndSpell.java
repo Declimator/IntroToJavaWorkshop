@@ -10,21 +10,38 @@ import javax.swing.JOptionPane;
  * Discuss with students how you would make this program. 
  * Allow them to code it themselves, or use this recipe.
  **/
+//o say the word. "e.g. spell mandlebrot"
 
+		// 2. Catch the user's answer 
 public class SpeakAndSpell {
-
 	public static void main(String[] args) {
-		// 1. Use the speak method to say the word. "e.g. spell mandlebrot"
+		speak("spell Apocolyptic");
+		String answer = JOptionPane.showInputDialog("Spell it");
+		// 1. Use the speak method in a String
+		if( answer.equalsIgnoreCase("it")) {
+			speak("Don't Try to trick me");
+		}
+		if(answer.equalsIgnoreCase("no")) {
+			speak("Why Not");
+			answer = JOptionPane.showInputDialog("Spell it");
+			if( answer.equalsIgnoreCase("because I want to")) {
+				speak("good bye");
+			}
+			}
 
-		// 2. Catch the user's answer in a String
-
+		if(answer.equalsIgnoreCase("Apocolyptic")){
+			speak("Congratulations");
+		}
+		else {
+    speak("Learn to Spell please");}
+		}
 		// 3. If the user spelled the word correctly, speak "correct"
 
 		// 4. Otherwise say "wrong"
 
 		// 5. repeat the process for other words
 		
-	}
+	
 
 	static void speak(String words) {
 		try {
